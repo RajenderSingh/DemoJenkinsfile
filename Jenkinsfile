@@ -3,12 +3,13 @@ pipeline {
 
     stages {
         stage('Compile') {
-        	withMaven(maven: 'maven-3-8-6') {
-        		echo 'compile stage started'
-        		sh 'mvn clean compile'
-        		echo 'compile stage completed'
-        	}
-            
+        	steps {
+	        	withMaven(maven: 'maven-3-8-6') {
+	        		echo 'compile stage started'
+	        		sh 'mvn clean compile'
+	        		echo 'compile stage completed'
+	        	}
+            }
         }
         stage('Test') {
             steps {
