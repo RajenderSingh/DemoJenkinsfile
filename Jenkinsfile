@@ -7,7 +7,7 @@ node {
 	stage('Compile Stage') {		
 		echo 'compile stage started'
 		def mvnHome = tool name: 'maven-3-8-6', type: 'maven'
-		sh "${mvnHome}/bin/mvn --version"
+		bat "${mvnHome}/bin/mvn --version"
 		echo 'compile stage completed'			
 	}
 }
