@@ -19,7 +19,7 @@ node {
 	stage('Deploy Stage') {		
 		echo 'deploy stage started'
 		def mvnHome = tool name: 'maven-3-8-6', type: 'maven'
-		bat "${mvnHome}/bin/mvn deploy"
+		bat "${mvnHome}/bin/mvn install"
 		echo 'deploy stage completed'			
 	}
 }
