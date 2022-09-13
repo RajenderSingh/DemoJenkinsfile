@@ -6,8 +6,7 @@ node {
 	}
 	stage('Compile Stage') {		
 		echo 'compile stage started'
-		def mvnHome = tool name: 'maven-3-8-6', type: 'maven' 
-		sh "${mvnHome}/bin/mvn clean compile"
+		sh "C:\apache-maven-3.8.6-bin\apache-maven-3.8.6\bin\mvn clean compile"
 		echo 'compile stage completed'			
 	}
 }
