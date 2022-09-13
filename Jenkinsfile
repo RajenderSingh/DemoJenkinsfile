@@ -10,4 +10,16 @@ node {
 		bat "${mvnHome}/bin/mvn clean compile"
 		echo 'compile stage completed'			
 	}
+	stage('Test Stage') {		
+		echo 'test stage started'
+		def mvnHome = tool name: 'maven-3-8-6', type: 'maven'
+		bat "${mvnHome}/bin/mvn test"
+		echo 'test stage completed'			
+	}
+	stage('Deploy Stage') {		
+		echo 'deploy stage started'
+		def mvnHome = tool name: 'maven-3-8-6', type: 'maven'
+		bat "${mvnHome}/bin/mvn deploy"
+		echo 'deploy stage completed'			
+	}
 }
