@@ -16,6 +16,12 @@ node {
 		bat "${mvnHome}/bin/mvn test"
 		echo 'test stage completed'			
 	}
+	stage('SonarQube Stage') {		
+		echo 'sonarqube stage started'
+		def sonarscannerHome = tool name: 'SonarQubeScanner'
+		bat "${sonarscannerHome}/bin/sonar-scanner"
+		echo 'sonarqube stage completed'			
+	}
 	stage('Deploy Stage') {		
 		echo 'deploy stage started'
 		def mvnHome = tool name: 'maven-3-8-6', type: 'maven'
