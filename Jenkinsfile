@@ -6,13 +6,13 @@ node {
 	}
 	stage('Compile Stage') {		
 		echo 'compile stage started'
-		def mvnHome = tool name: 'maven-3-8-6', type: 'maven'
+		def mvnHome = tool name: 'maven-3-9-4', type: 'maven'
 		bat "${mvnHome}/bin/mvn clean compile"
 		echo 'compile stage completed'			
 	}
 	stage('Test Stage') {		
 		echo 'test stage started'
-		def mvnHome = tool name: 'maven-3-8-6', type: 'maven'
+		def mvnHome = tool name: 'maven-3-9-4', type: 'maven'
 		bat "${mvnHome}/bin/mvn test"
 		echo 'test stage completed'			
 	}
@@ -24,7 +24,7 @@ node {
 	}
 	stage('Deploy Stage') {		
 		echo 'deploy stage started'
-		def mvnHome = tool name: 'maven-3-8-6', type: 'maven'
+		def mvnHome = tool name: 'maven-3-9-4', type: 'maven'
 		bat "${mvnHome}/bin/mvn install"
 		echo 'deploy stage completed'			
 	}
